@@ -1,25 +1,38 @@
-# Proteus website, option 9 "CHANGE SHAPE. GET TO WORK." (final candidate)
+# Proteus by Outis
 
-Final combination (22 Oct 2026): v8 film and mission story, real hardware first, sourced problem, the shift, physics, the module, Stage 1 first job, plan, team. Dark story sections, light evidence sections. Built to replace the outis-robotics.com home page; /lab/ and /demo/ stay as they are. Static site: no build step, no cookies, no tracking, no third-party requests. Fonts are self-hosted.
+Source of the public website for **Proteus**, a modular robot developed by Outis in Berlin. The site is live at [outis-robotics.com](https://outis-robotics.com).
+
+Proteus is a robot made of identical modules that changes its shape during the task: a walker over rubble, a chain through a small opening, a braced structure that works with force on site.
+
+## Structure
 
 | Path | Content |
 |---|---|
-| `index.html` | Hero film, key numbers, the problem (sourced), the mission film and six chapters, the readout, why modular (comparison), the module, proof and roadmap, go-to-market, team, contact |
-| `impressum.html`, `privacy.html` | Legal pages (German) |
-| `404.html` | Not-found page (absolute paths assume the site is served at `/proteus_9/`) |
-| `assets/css/site.css` | Design tokens, components, layout |
-| `assets/js/main.js` | Nav, film player, lazy looping clips with pause controls, readout typing, reveals |
-| `assets/fonts/` | Archivo and IBM Plex Mono (SIL Open Font License 1.1) |
-| `assets/media/` | v8 film, hero montage, chapter loops with posters, prototype clips, lab sheets |
+| `index.html` | Home page |
+| `impressum.html`, `privacy.html` | Legal notice and privacy policy (German) |
+| `404.html` | Not-found page |
+| `assets/css/site.css` | Styles |
+| `assets/js/main.js` | Navigation, film player, looping clips with pause controls, scroll reveals |
+| `assets/fonts/` | Archivo and IBM Plex Mono, self-hosted |
+| `assets/media/` | Videos, video posters and images |
+| `assets/img/` | Favicons |
 
-Evidence labels: amber = render of MK3 target capability, green = lab statics on the exact MK1.1 kinematics, orange = real prototype.
-Problem figures link to their sources (SES Ukraine via UNN, NIOSH 86-110, SES via Babel, Interfax-Ukraine).
+## How it works
+
+A static site with no build step. GitHub Pages serves it directly from the `main` branch, so every commit to `main` goes live, usually within minutes. The site sets no cookies, uses no tracking and loads no resources from third parties.
 
 ## Local preview
 
-Video needs a server with HTTP range support for Safari:
+Serve the folder with any static server that supports HTTP range requests (Safari needs them to play video), for example:
 
 ```bash
-python3 ~/Proteus/Claude_Mission30/tools/range_server.py ~/Sites 8095
-# open http://127.0.0.1:8095/proteus_9/
+npx serve .
 ```
+
+## Contact
+
+Yannik Trinn · [yannik.trinn@outis-robotics.com](mailto:yannik.trinn@outis-robotics.com)
+
+## Copyright
+
+© 2026 Yannik Trinn and Ruben Estrella (Outis). All rights reserved. Text, images and videos may not be reused without written permission. The fonts Archivo and IBM Plex Mono are licensed under the SIL Open Font License 1.1.
