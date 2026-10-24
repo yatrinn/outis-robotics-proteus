@@ -49,3 +49,11 @@
   .brand__mark { width:28px; flex-shrink:0; }
   .brand__word { font-size:1.1rem; }
 }
+
+/* v2: plan list and the closing line of the homepage teaser */
+.vision-teaser__line { color:var(--ink); font-size:clamp(1.1rem,1.6vw,1.3rem); font-weight:600; line-height:1.45; max-width:44ch; margin:1.4rem 0 0; }
+.essay__plan { list-style:none; counter-reset:plan; margin:0 0 2rem; padding:0; display:grid; gap:1.4rem; }
+.essay__plan li { counter-increment:plan; position:relative; padding-left:3.1rem; }
+.essay__plan li::before { content:counter(plan, decimal-leading-zero); position:absolute; left:0; top:.15rem; font-family:var(--font-mono); font-size:.85rem; letter-spacing:.08em; color:var(--accent); }
+.essay__plan strong { display:block; color:var(--ink); font-weight:650; line-height:1.45; margin-bottom:.2rem; }
+.essay__plan .essay__status { display:block; margin-top:.35rem; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
