@@ -36,3 +36,7 @@ Yannik Trinn · [yannik.trinn@outis-robotics.com](mailto:yannik.trinn@outis-robo
 ## Copyright
 
 © 2026 Yannik Trinn and Ruben Estrella (Outis). All rights reserved. Text, images and videos may not be reused without written permission. The fonts Archivo and IBM Plex Mono are licensed under the SIL Open Font License 1.1.
+
+## Vision essay
+
+`vision/index.html` presents the long-term direction: smaller modules, larger assemblies and embodied AI with selectable bodies. The homepage links to it after the first application. `assets/css/vision.css` holds its scoped layout. Miniaturization and autonomous multi-module reconfiguration are development ambitions; the essay distinguishes them from the first physical test-rig prototype.
