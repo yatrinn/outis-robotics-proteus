@@ -37,7 +37,7 @@
     <nav class="nav__links" id="menu" aria-label="Main">
       <a href="#shift">The shift</a>
       <a href="#module">The module</a>
-      <a href="#first-job">First job</a>
+      <a href="#first-job">Applications</a>
       <a href="#vision">Vision</a>
       <a href="#team">Team</a>
     </nav>
@@ -146,129 +146,24 @@
     <p class="lead">A fixed robot is built for the hardest moment of its mission and carries that shape everywhere. Proteus changes shape per phase: it walks, slips through as a chain, braces and works with force, then walks back.</p>
   </div>
 
-  <figure class="wrap profile" id="profile" data-reveal>
-    <div class="profile__scroll" role="region" aria-label="Mission profile" tabindex="0">
-      <svg viewBox="0 0 1200 400" role="img" aria-labelledby="mp-title mp-desc" class="profile__svg">
-        <title id="mp-title">Mission profile, side section to scale</title>
-        <desc id="mp-desc">The rescue team waits behind the barrier at the left. The robot modules start as a heap in front of the barrier, cross the open street over rubble, bridge a 0.9 m wide, 1.6 m deep ravine whose footbridge is gone, enter the cellar of a collapsed building through a 25 cm gap in the slab, check column C2 and come back.</desc>
-        <defs>
-          <pattern id="mp-hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="4" height="8" class="mp-hatch"/></pattern>
-          <marker id="mp-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 9 5 0 9z" class="mp-arrowhead"/></marker>
-          <marker id="mp-arrow-ret" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1 9 5 0 9z" class="mp-arrowhead-ret"/></marker>
-        </defs>
-        <!-- 40 px per metre in both axes; ground at y = 230; x = 80 + (world x + 19) * 40 -->
-        <g class="mp-earth">
-          <path d="M40 230H840V330H40Z"/>
-          <path d="M840 294H876V330H840Z"/>
-          <path d="M876 230H984V330H876Z"/>
-          <path d="M984 274H1160V330H984Z"/>
-          <path d="M1160 230H1180V330H1160Z"/>
-        </g>
-        <path class="mp-cellar" d="M984 238H1160V274H984Z"/>
-        <path class="mp-surface" d="M40 230H840V294H876V230H1033M1043 230H1180"/>
-        <!-- collapsed building -->
-        <path class="mp-wall" d="M984 230V128l8 12 5-18 7 14V230Z"/>
-        <path class="mp-wall" d="M1160 230V104l-6 10-7-9-5 22V230Z"/>
-        <path class="mp-slab" d="M984 230H1033V238H984Z M1043 230H1160V238H1043Z"/>
-        <path class="mp-debris" d="M1000 230l14-16 16 6 3 10Z M1090 230l12-14 22 5 8 9Z M1052 230l6-6 9 3 2 3Z"/>
-        <rect class="mp-column" x="1063" y="238" width="12" height="36"/>
-        <path class="mp-crack" d="M1065 246l5 4-3 5 5 5-2 4"/>
-        <!-- ravine with the broken footbridge -->
-        <path class="mp-slab" d="M824 226h16v4h-16Z M876 226h14v4h-14Z"/>
-        <path class="mp-debris" d="M846 294l7-7 10 3 7 4Z"/>
-        <!-- rubble on the street -->
-        <path class="mp-debris" d="M500 230l7-7 9 3 4 4Z M590 230l9-8 12 4 5 4Z M690 230l6-5 9 2 3 3Z M760 230l10-9 13 5 6 4Z"/>
-        <!-- staging: truck, people kept out, barrier -->
-        <g class="mp-truck">
-          <rect x="44" y="128" width="200" height="92" rx="7"/>
-          <rect x="196" y="140" width="40" height="30" rx="4" class="mp-window"/>
-          <rect x="50" y="176" width="140" height="10" class="mp-stripe"/>
-          <circle cx="84" cy="220" r="12"/><circle cx="204" cy="220" r="12"/>
-          <rect x="104" y="118" width="48" height="10" rx="4" class="mp-light"/>
-        </g>
-        <g class="mp-people" aria-hidden="true">
-          <circle cx="276" cy="164" r="6"/><path d="M269 230v-52q0-7 7-7t7 7v52z"/>
-          <circle cx="302" cy="164" r="6"/><path d="M295 230v-52q0-7 7-7t7 7v52z"/>
-          <circle cx="328" cy="164" r="6"/><path d="M321 230v-52q0-7 7-7t7 7v52z"/>
-        </g>
-        <g class="mp-barrier"><path d="M366 230V192M388 230V192"/><rect x="356" y="194" width="42" height="10" class="mp-rail-base"/><rect x="356" y="194" width="42" height="10" fill="url(#mp-hatch)" class="mp-rail"/></g>
-        <!-- robot route out and back (dashed) -->
-        <path class="mp-path" d="M430 222H1038V264H1058" marker-end="url(#mp-arrow)"/>
-        <path class="mp-return" d="M1048 256V212H444" marker-end="url(#mp-arrow-ret)"/>
-        <g class="mp-steps">
-          <circle cx="430" cy="222" r="11"/><text x="430" y="226">1</text>
-          <circle cx="640" cy="222" r="11"/><text x="640" y="226">2</text>
-          <circle cx="858" cy="222" r="11"/><text x="858" y="226">3</text>
-          <circle cx="1038" cy="246" r="11"/><text x="1038" y="250">4</text>
-          <circle cx="1022" cy="266" r="11"/><text x="1022" y="270">5</text>
-          <circle cx="560" cy="212" r="11" class="mp-step-ret"/><text x="560" y="216">6</text>
-        </g>
-        <g class="mp-labels">
-          <text x="44" y="92" class="mp-blue">RESCUE TEAM</text>
-          <text x="44" y="108">waits behind the barrier</text>
-          <text x="430" y="262" text-anchor="middle">HEAP OF MODULES</text>
-          <text x="640" y="172" text-anchor="middle">OPEN STREET · RUBBLE</text>
-          <text x="1072" y="50" text-anchor="middle">COLLAPSED BUILDING</text>
-          <text x="1072" y="68" text-anchor="middle">25 cm GAP IN THE SLAB</text>
-          <text x="1180" y="352" text-anchor="end">CELLAR COLUMN C2</text>
-          <text x="1180" y="368" text-anchor="end" class="mp-ok">inspect</text>
-        </g>
-        <path class="mp-leader" d="M1038 76V226"/>
-        <path class="mp-leader" d="M1120 340H1069V278"/>
-        <g class="mp-scale"><path d="M1060 392h40M1060 387v10M1100 387v10"/><text x="1112" y="396">1 m</text></g>
-      </svg>
-    </div>
-    <p class="profile__hint mono" aria-hidden="true">Swipe to follow the route →</p>
-  </figure>
-
-  <div class="wrap film" id="film" data-reveal>
-    <div class="film__frame">
-      <video class="film__video" data-film controls playsinline preload="none" poster="assets/media/v10-film.jpg" aria-label="Film: robot modules check a collapsed building's cellar column before rescuers enter.">
-        <source src="assets/media/v10-film.mp4" type="video/mp4">
-      </video>
-      <button class="film__play" type="button" data-film-play aria-label="Play the film with sound">
-        <span class="film__icon" aria-hidden="true"></span>
-        <span class="film__label"><strong>Robots go first</strong><span class="mono">The mission · 1:45 · with sound</span></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="wrap phases">
-    <article class="phase" data-reveal>
-      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-01-dropoff.jpg" data-src="assets/media/v8-01-dropoff.mp4" aria-label="Simulation: a heap of modules assembles into a walker at the barrier."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>1</span>Self-assembly</p>
-      <h3 class="phase__title">A crate, not a crew.</h3>
-      <p>The modules arrive as a heap at the barrier, dock and stand up as a walker.</p>
-    </article>
+      <div class="wrap phases">
     <article class="phase" data-reveal>
       <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-02-rubble.jpg" data-src="assets/media/v8-02-rubble.mp4" aria-label="Simulation: the walker carries the sensor over rubble."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>2</span>Walker</p>
+      <p class="phase__tag mono"><span>1</span>Walker</p>
       <h3 class="phase__title">Walks where wheels stop.</h3>
-      <p>Carries the sensor over rubble. Nobody crosses the open street.</p>
-    </article>
-    <article class="phase" data-reveal>
-      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-03-ravine.jpg" data-src="assets/media/v8-03-ravine.mp4" aria-label="Simulation: the walker becomes a bridge over a ravine."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>3</span>Bridge</p>
-      <h3 class="phase__title">Brings its own bridge.</h3>
-      <p>Computed statics: 30 modules over a 1.0 m gap, 92–96 N peak rod force while a 1 kg case crosses.</p>
+      <p>Crosses rubble, steps and gaps with the sensor or tool on board. Nobody has to cross first.</p>
     </article>
     <article class="phase" data-reveal>
       <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-04-gap.jpg" data-src="assets/media/v8-04-gap.mp4" aria-label="Simulation: a chain of modules lowers the sensor through a narrow gap into the cellar."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>4</span>Chain</p>
-      <h3 class="phase__title">25 cm is enough.</h3>
-      <p>Part of the walker anchors at the slab; a chain carries the sensor down.</p>
+      <p class="phase__tag mono"><span>2</span>Chain</p>
+      <h3 class="phase__title">Fits through 25 cm.</h3>
+      <p>Turns into a chain and reaches through manways, nozzles and gaps in collapsed slabs.</p>
     </article>
     <article class="phase" data-reveal>
       <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-05-column.jpg" data-src="assets/media/v8-05-column.mp4" aria-label="Simulation: the chain braces into a triangle and presses the sensor onto a cracked column."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>5</span>Braced manipulator</p>
-      <h3 class="phase__title">A measurement, not a guess.</h3>
-      <p>Braced against floor and column, it presses the ultrasonic sensor on with force a snake cannot give.</p>
-    </article>
-    <article class="phase" data-reveal>
-      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-06-return.jpg" data-src="assets/media/v8-06-return.mp4" aria-label="Simulation: the modules withdraw and walk back."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>6</span>Walker again</p>
-      <h3 class="phase__title">The team goes in knowing.</h3>
-      <p>Back through the gap, re-form, walk out. Next job, next shape.</p>
+      <p class="phase__tag mono"><span>3</span>Braced arm</p>
+      <h3 class="phase__title">Works with force, on site.</h3>
+      <p>Braces against the structure and presses tools and sensors on with a force a snake or a drone cannot apply.</p>
     </article>
   </div>
 
@@ -282,7 +177,7 @@
           <tr><th scope="row">Keeps people out of the danger zone</th><td><span class="cap cap--no">No</span></td><td><span class="cap cap--yes">Yes</span></td><td><span class="cap cap--yes">Yes</span></td><td><span class="cap cap--yes">Yes</span></td><td><span class="cap cap--yes">Yes</span></td><td class="is-us"><span class="cap cap--yes">Yes</span></td></tr>
           <tr><th scope="row">Crosses rubble and gaps</th><td><span class="cap cap--part">At risk</span></td><td><span class="cap cap--yes">Yes</span></td><td><span class="cap cap--part">Small gaps</span></td><td><span class="cap cap--yes">Flies</span></td><td><span class="cap cap--no">No</span></td><td class="is-us"><span class="cap cap--yes">Walker, bridge</span></td></tr>
           <tr><th scope="row">Passes a 250 mm opening</th><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--part">Small units only</span></td><td><span class="cap cap--part">Small units, no contact</span></td><td><span class="cap cap--yes">Yes</span></td><td class="is-us"><span class="cap cap--yes">As a chain</span></td></tr>
-          <tr><th scope="row">Applies force at 1 m reach behind it</th><td><span class="cap cap--yes">Yes</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">Little force at reach</span></td><td class="is-us"><span class="cap cap--yes">Braced, 200 N target</span></td></tr>
+          <tr><th scope="row">Applies force at 1 m reach behind it</th><td><span class="cap cap--yes">Yes</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">Little force at reach</span></td><td class="is-us"><span class="cap cap--yes">Braced</span></td></tr>
           <tr><th scope="row">One kit for every shape of job</th><td><span class="cap cap--none">n/a</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">No</span></td><td><span class="cap cap--no">No</span></td><td class="is-us"><span class="cap cap--yes">Yes</span></td></tr>
         </tbody>
       </table>
@@ -298,7 +193,7 @@
       <p class="eyebrow">03 · The module</p>
       <h2 id="module-title" class="h2">Everything is made of one part.</h2>
     </div>
-    <p class="lead">An actuated strut with a docking head at each end. Built many times over, it becomes whatever the job needs. That part, its docks and its reconfiguration under load are what we build, protect and qualify.</p>
+    <p class="lead">One actuated strut with a docking head at each end. Identical struts dock into the shape the job needs, share power through their docks and change shape under load.</p>
   </div>
   <div class="wrap module__grid">
     <figure class="drawing" data-reveal>
@@ -357,23 +252,23 @@
     </ol>
   </div>
   <div class="wrap studies" id="studies">
-    <h3 class="h3 studies__title" data-reveal>Planner studies on the exact MK1.1 kinematics.</h3>
+    <h3 class="h3 studies__title" data-reveal>Every shape change is planned on the real module geometry.</h3>
     <div class="studies__grid">
       <figure class="clip" data-reveal>
         <div class="clip__media clip__media--wide">
           <video muted loop playsinline preload="none" poster="assets/media/lab-stack-to-chain.jpg" data-src="assets/media/lab-stack-to-chain.mp4" aria-label="Planner playback: four units turn a compact stack into a chain."></video>
-          <span class="badge badge--ok">Planner · MK1.1 kinematics</span>
+          <span class="badge badge--ok">Motion planner</span>
           <button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button>
         </div>
-        <figcaption><strong>From a compact stack to a chain</strong><span class="mono">kinematics only</span></figcaption>
+        <figcaption><strong>From a compact stack to a chain</strong></figcaption>
       </figure>
       <figure class="clip" data-reveal>
         <div class="clip__media clip__media--wide">
           <video muted loop playsinline preload="none" poster="assets/media/lab-anchor-change.jpg" data-src="assets/media/lab-anchor-change.mp4" aria-label="Planner playback: one unit docks to a second head, releases the floor and moves from its new anchor."></video>
-          <span class="badge badge--ok">Planner · MK1.1 kinematics</span>
+          <span class="badge badge--ok">Motion planner</span>
           <button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button>
         </div>
-        <figcaption><strong>One unit changes its anchor</strong><span class="mono">kinematics only</span></figcaption>
+        <figcaption><strong>One unit changes its anchor</strong></figcaption>
       </figure>
     </div>
   </div>
@@ -384,45 +279,29 @@
   <span id="market" aria-hidden="true"></span>
   <div class="wrap section-head section-head--split" data-reveal>
     <div>
-      <p class="eyebrow">04 · First job</p>
-      <h2 id="fj-title" class="h2">We start where the access is defined.</h2>
+      <p class="eyebrow">04 · Applications</p>
+      <h2 id="fj-title" class="h2">Work behind the opening, in plants and in the field.</h2>
     </div>
-    <p class="lead">Every generation goes into the field as soon as it can do real work. The first: retrieving and placing objects without human entry in hazardous, confined or unstructured spaces.</p>
+    <p class="lead">Proteus retrieves, inspects and places sensors or tools where access is small and entry is dangerous, so nobody has to go in first.</p>
   </div>
-  <div class="wrap fj__grid">
-    <table class="spec" data-reveal>
-      <caption class="sr">Stage 1 task specification</caption>
-      <tbody>
-        <tr><th scope="row" class="mono">Access</th><td>Ø250 mm side openings</td></tr>
-        <tr><th scope="row" class="mono">Equipment</th><td>A vessel, a column section and an exchanger head with changeable internals</td></tr>
-        <tr><th scope="row" class="mono">Task A</th><td>Retrieve a foreign object of up to 1 kg: a bolt, a hand tool, a gasket piece</td></tr>
-        <tr><th scope="row" class="mono">Task B</th><td>Place a sensor logger at a marked spot with 20 N ±5 N contact force</td></tr>
-        <tr><th scope="row" class="mono">Way out</th><td>Withdraw through the same opening, stow, move on</td></tr>
-      </tbody>
-    </table>
-    <div class="targets targets--paper" data-reveal>
-      <div class="target"><p class="target__value">6<span>/10</span></p><p class="target__label">complete task chains on unseen layouts</p></div>
-      <div class="target"><p class="target__value">18<span>/20</span></p><p class="target__label">working positions holding the target force, in 3 load-bearing configurations</p></div>
-      <div class="target"><p class="target__value">200<span>N</span></p><p class="target__label">usable tool force, held 60 s within 5 mm</p></div>
-    </div>
-  </div>
-  <div class="wrap theaters__grid">
-    <article class="theater theater--first" data-reveal>
-      <p class="theater__step mono">First</p>
+    <div class="wrap theaters__grid">
+    <article class="theater" data-reveal>
+      <p class="theater__step mono">Industry</p>
       <h3 class="h3">Energy and industrial plants</h3>
       <p>Vessels, columns and exchangers: retrieve, inspect and place sensors through nozzles and manways. No confined-space entry, fewer openings, less downtime per intervention.</p>
     </article>
     <article class="theater" data-reveal>
-      <p class="theater__step mono">Next</p>
+      <p class="theater__step mono">Defense</p>
+      <h3 class="h3">Defense maintenance and protection</h3>
+      <p>Aircraft fuel tanks and vehicle hulls, ordnance disposal and CBRN reconnaissance: the modules go into the hazard, soldiers and technicians stay out.</p>
+    </article>
+    <article class="theater" data-reveal>
+      <p class="theater__step mono">Civil protection</p>
       <h3 class="h3">Civil protection and rescue</h3>
       <p>Inspect collapsed structures and voids before anyone enters. The first look costs a module, not a rescuer.</p>
     </article>
-    <article class="theater" data-reveal>
-      <p class="theater__step mono">Dual-use</p>
-      <h3 class="h3">Defense maintenance and protection</h3>
-      <p>Aircraft fuel tanks, vehicle hulls, ordnance disposal and CBRN reconnaissance.</p>
-    </article>
   </div>
+
 </section>
 
 
@@ -468,7 +347,7 @@
 <section class="contact" id="contact" aria-labelledby="contact-title">
   <div class="wrap contact__inner" data-reveal>
     <h2 id="contact-title" class="contact__title">Where do you still send people first?</h2>
-    <p class="lead">Tell us the opening, the ground and the job. Plant operators, rescue services, integrators, research programs and investors: we want the hard cases.</p>
+    <p class="lead">Tell us the opening, the ground and the job. Plant operators, defense and civil-protection organizations, integrators and investors: we want the hard cases.</p>
     <div class="hero__actions">
       <a class="btn btn--accent" href="mailto:yannik.trinn@outis-robotics.com?subject=Demo%20request%20%E2%80%93%20Proteus">Book a demo</a>
       <a class="btn btn--ghost" href="mailto:yannik.trinn@outis-robotics.com?subject=Proteus">yannik.trinn@outis-robotics.com</a>
@@ -478,6 +357,21 @@
 </section>
 
 </main>
+
+<dialog class="film-dialog" id="film-dialog" aria-label="Film: Robots go first">
+  <button class="film-dialog__close" type="button" data-film-close aria-label="Close the film"><span aria-hidden="true">×</span></button>
+  <div class="film" id="film">
+      <div class="film__frame">
+        <video class="film__video" data-film controls playsinline preload="none" poster="assets/media/v10-film.jpg" aria-label="Film: robot modules check a collapsed building's cellar column before rescuers enter.">
+          <source src="assets/media/v10-film.mp4" type="video/mp4">
+        </video>
+        <button class="film__play" type="button" data-film-play aria-label="Play the film with sound">
+          <span class="film__icon" aria-hidden="true"></span>
+          <span class="film__label"><strong>Robots go first</strong><span class="mono">The mission · 1:45 · with sound</span></span>
+        </button>
+      </div>
+    </div>
+</dialog>
 
 <footer class="foot">
   <div class="wrap foot__inner">

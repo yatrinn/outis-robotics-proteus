@@ -60,6 +60,7 @@
 
   // film: plays with sound on request; background clips pause meanwhile
   const filmWrap = document.querySelector('.film');
+  const dlg = document.getElementById('film-dialog');
   const film = document.querySelector('[data-film]');
   let filmOn = false;
   if (film && filmWrap) {
@@ -76,7 +77,7 @@
     playBtn && playBtn.addEventListener('click', start);
     document.querySelectorAll('[data-play-film]').forEach(a => a.addEventListener('click', e => {
       e.preventDefault();
-      filmWrap.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      if (dlg && typeof dlg.showModal === 'function' && !dlg.open) dlg.showModal();
       start();
     }));
     film.addEventListener('play', () => {
@@ -87,6 +88,12 @@
       clips.forEach(v => { if (!v.paused) v.pause(); });
     });
     const off = () => { filmOn = false; };
+    if (dlg) {
+      const closeBtn = dlg.querySelector('[data-film-close]');
+      closeBtn && closeBtn.addEventListener('click', () => dlg.close());
+      dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener('close', () => { film.pause(); filmWrap.classList.remove('is-playing'); });
+    }
     film.addEventListener('pause', off);
     film.addEventListener('ended', off);
   }
