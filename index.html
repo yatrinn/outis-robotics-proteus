@@ -118,7 +118,7 @@
         <span class="badge badge--proto">Prototype</span>
         <button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button>
       </div>
-      <figcaption><strong>Docks that carry load</strong><span class="mono">Load-bearing since 4 Oct 2026 · the docked parts hang from one dock · take of 8 Oct</span></figcaption>
+      <figcaption><strong>Docks that carry load</strong><span class="mono">Load-bearing since 4 Oct 2026</span></figcaption>
     </figure>
     <figure class="clip" data-reveal>
       <div class="clip__media">
@@ -134,11 +134,11 @@
         <span class="badge badge--proto">Prototype</span>
         <button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button>
       </div>
-      <figcaption><strong>Moves under its own power</strong><span class="mono">Powered since 16 Oct 2026 · head tilt and extension by its six actuators · take of 20 Oct</span></figcaption>
+      <figcaption><strong>Moves under its own power</strong><span class="mono">Powered since 16 Oct 2026 · head tilt and extension by its six actuators</span></figcaption>
     </figure>
   </div>
   <div class="wrap facts" data-reveal>
-    <div class="fact"><p class="fact__v">588</p><p class="fact__l">ways two modules can dock: 14&nbsp;×&nbsp;14 faces, 3 orientations each</p></div>
+    <div class="fact"><p class="fact__v">588</p><p class="fact__l">ways two modules can dock</p></div>
     <div class="fact"><p class="fact__v">34</p><p class="fact__l">claims, utility model filed with the DPMA, 21 Oct 2026</p></div>
     <div class="fact"><p class="fact__v">463</p><p class="fact__l">automated tests in our 17,800-line planner</p></div>
   </div>
@@ -336,13 +336,9 @@
 </section>
 
 <!-- PHYSICS -->
-<section class="paper physics" id="physics" aria-labelledby="physics-title">
+<section class="paper physics" id="physics" aria-label="Load paths">
   <span id="how" aria-hidden="true"></span>
-  <div class="wrap section-head section-head--split" data-reveal>
-    <div>
-      <p class="eyebrow">04 · Why it works</p>
-      <h2 id="physics-title" class="h2">Enter as a chain. Work as a structure.</h2>
-    </div>
+  <div class="wrap section-head" data-reveal>
     <p class="lead">The gain is leverage. In a chain, actuators about 2 cm from each joint axis hold the tool load in bending, so force and stiffness collapse with reach. Braced, two supports about 40 cm apart hold it and the struts carry the load along their axes. Force grows with that ratio, stiffness with its square.</p>
   </div>
   <div class="wrap physics__grid">
@@ -403,7 +399,7 @@
           <path d="M236 172 166 150M236 190 166 212M236 181 170 181"/>
           <path d="M524 172 594 150M524 190 594 212M524 181 590 181"/>
         </g>
-        <!-- heads: truncated octahedron silhouettes -->
+        <!-- heads -->
         <g class="dw-head">
           <path d="M120 126 154 140 168 181 154 222 120 236 86 222 72 181 86 140z"/>
           <path class="dw-face" d="M104 160h32l12 21-12 21h-32l-12-21z"/>
@@ -424,13 +420,13 @@
           <path d="M640 236v40"/><circle cx="640" cy="290" r="13"/><text x="640" y="295" text-anchor="middle">4</text>
         </g>
       </svg>
-      <figcaption class="mono">Schematic, not to scale. MK1.2 today; MK3 doubles the actuator force in the same envelope.</figcaption>
+      <figcaption class="mono">Schematic, not to scale.</figcaption>
     </figure>
     <ol class="specs" data-reveal>
-      <li><b>Docking head</b><span>A truncated octahedron with seven load-bearing dock faces, 14 per module, mating in three orientations; hooks interlock with the partner head.</span></li>
-      <li><b>Six degrees of freedom</b><span>At each end, three self-locking linear actuators tilt the head by up to 50° and extend it: a head-to-head span of 410 to 610 mm.</span></li>
-      <li><b>One strut, many roles</b><span>Leg, beam, chain link or brace: the same part, about 110 mm across and 0.45 m long.</span></li>
-      <li><b>Power through the dock</b><span>Spring contacts pass 24 V between modules. Tool and sensor modules carry the same head: a gripper with force sensing and camera, an ultrasonic or camera probe, brace feet.</span></li>
+      <li><b>Docking head</b></li>
+      <li><b>Six degrees of freedom</b></li>
+      <li><b>One strut, many roles</b></li>
+      <li><b>Power through the dock</b></li>
     </ol>
   </div>
   <div class="wrap studies" id="studies">
@@ -442,7 +438,7 @@
           <span class="badge badge--ok">Planner · MK1.1 kinematics</span>
           <button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button>
         </div>
-        <figcaption><strong>From a compact stack to a chain</strong><span class="mono">9 docking steps · 362 poses checked for rod stroke, head tilt, dock faces and collisions · kinematics only</span></figcaption>
+        <figcaption><strong>From a compact stack to a chain</strong><span class="mono">kinematics only</span></figcaption>
       </figure>
       <figure class="clip" data-reveal>
         <div class="clip__media clip__media--wide">
@@ -450,7 +446,7 @@
           <span class="badge badge--ok">Planner · MK1.1 kinematics</span>
           <button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button>
         </div>
-        <figcaption><strong>One unit changes its anchor</strong><span class="mono">The sequence of our hardware test rig · kinematics only</span></figcaption>
+        <figcaption><strong>One unit changes its anchor</strong><span class="mono">kinematics only</span></figcaption>
       </figure>
     </div>
   </div>
@@ -464,15 +460,14 @@
       <p class="eyebrow">06 · First job</p>
       <h2 id="fj-title" class="h2">We start where the access is defined.</h2>
     </div>
-    <p class="lead">Every generation goes into the field as soon as it can do real work. The first: retrieving and placing objects without human entry in hazardous, confined or unstructured spaces. Stage 1 tests it in a guarded mock plant hall with three equipment mock-ups; Stage 2 moves the task family onto real equipment with a plant partner.</p>
+    <p class="lead">Every generation goes into the field as soon as it can do real work. The first: retrieving and placing objects without human entry in hazardous, confined or unstructured spaces.</p>
   </div>
   <div class="wrap fj__grid">
     <table class="spec" data-reveal>
       <caption class="sr">Stage 1 task specification</caption>
       <tbody>
-        <tr><th scope="row" class="mono">Access</th><td>Ø250 mm side openings at 0.4 to 0.8 m height</td></tr>
+        <tr><th scope="row" class="mono">Access</th><td>Ø250 mm side openings</td></tr>
         <tr><th scope="row" class="mono">Equipment</th><td>A vessel, a column section and an exchanger head with changeable internals</td></tr>
-        <tr><th scope="row" class="mono">Command</th><td>One per run: the unit and the task. No teleoperation</td></tr>
         <tr><th scope="row" class="mono">Task A</th><td>Retrieve a foreign object of up to 1 kg: a bolt, a hand tool, a gasket piece</td></tr>
         <tr><th scope="row" class="mono">Task B</th><td>Place a sensor logger at a marked spot with 20 N ±5 N contact force</td></tr>
         <tr><th scope="row" class="mono">Way out</th><td>Withdraw through the same opening, stow, move on</td></tr>
@@ -482,8 +477,7 @@
       <div class="target"><p class="target__value">6<span>/10</span></p><p class="target__label">complete task chains on unseen layouts</p></div>
       <div class="target"><p class="target__value">18<span>/20</span></p><p class="target__label">working positions holding the target force, in 3 load-bearing configurations</p></div>
       <div class="target"><p class="target__value">200</p><p class="target__label">physically validated configurations from one module family, the Challenge target</p></div>
-      <div class="target"><p class="target__value">200<span>N</span></p><p class="target__label">usable tool force, held 60 s within 5 mm, 10× a compact arm's lift load</p></div>
-      <p class="targets__note mono">Our Stage 1 targets in the SPRIND Next Frontier Robotics Challenge, 13 Nov 2026 to 30 Sep 2027.</p>
+      <div class="target"><p class="target__value">200<span>N</span></p><p class="target__label">usable tool force, held 60 s within 5 mm</p></div>
     </div>
   </div>
   <div class="wrap theaters__grid">
@@ -500,7 +494,7 @@
     <article class="theater" data-reveal>
       <p class="theater__step mono">Dual-use</p>
       <h3 class="h3">Defense maintenance and protection</h3>
-      <p>Aircraft fuel tanks, vehicle hulls, ordnance disposal and CBRN reconnaissance. Never weapons, munitions or fire control.</p>
+      <p>Aircraft fuel tanks, vehicle hulls, ordnance disposal and CBRN reconnaissance.</p>
     </article>
   </div>
 </section>
@@ -532,7 +526,7 @@
     <article class="person" data-reveal>
       <span class="person__avatar" aria-hidden="true">RE</span>
       <h3 class="h3">Ruben Estrella <small class="mono">CTO</small></h3>
-      <p>Mechanical engineer, M.Eng. from BHT Berlin (1.1 with distinction). Two years of mechanical design at Fraunhofer IPK, where he developed, built and tested a high-speed micro-milling spindle. Inventor of the Proteus module: designed its docks and mechanisms and built the powered prototype and the docking test rig.</p>
+      <p>Mechanical engineer, M.Eng. from BHT Berlin. Two years of mechanical design at Fraunhofer IPK. Inventor of the Proteus module: designed its docks and mechanisms and built the powered prototype and the docking test rig.</p>
       <a class="link mono" href="https://www.linkedin.com/in/ruben-estrella/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </article>
     <article class="person" data-reveal>
@@ -541,13 +535,6 @@
       <p>Physical AI at NEURA Robotics and consulting at Roland Berger. Two M.Sc. degrees from RWTH Aachen and Tsinghua University. Two master craftsman certificates (Meisterbriefe) in metal and electrical engineering.</p>
       <a class="link mono" href="https://www.linkedin.com/in/yannik-trinn/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </article>
-  </div>
-  <div class="wrap">
-    <figure class="founders" data-reveal>
-      <video class="founders__video" controls playsinline preload="none" poster="assets/media/founders.jpg" aria-label="Ruben and Yannik introduce Proteus and show the MK1 prototype.">
-        <source src="assets/media/founders.mp4" type="video/mp4">
-      </video>
-    </figure>
   </div>
 </section>
 
