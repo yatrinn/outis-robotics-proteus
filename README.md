@@ -19,7 +19,7 @@ Proteus is a robot made of identical modules that changes its shape during the t
 
 ## How it works
 
-A static site with no build step. GitHub Pages serves it directly from the `main` branch, so every commit to `main` goes live, usually within minutes. The site sets no cookies, uses no tracking and loads no resources from third parties.
+A static site with no build step. GitHub Pages serves it directly from the `main` branch under the custom domain in `CNAME`, so every commit to `main` goes live, usually within minutes. DNS for outis-robotics.com is managed at ALL-INKL: the apex A records point to GitHub Pages (185.199.108.153–111.153), `www` is a CNAME to `yatrinn.github.io`, and the MX/SPF records for email stay on ALL-INKL. The site sets no cookies, uses no tracking and loads no resources from third parties.
 
 ## Local preview
 
