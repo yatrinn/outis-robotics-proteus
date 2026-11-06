@@ -713,3 +713,11 @@ p { margin: 0 0 1rem; }
 .foot__meta { margin: 0; color: var(--ink-2); line-height: 1.6; }
 .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; }
 .foot__links span { color: var(--ink-3); }
+
+/* Team: photo left, text right, two people across the full width */
+.team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem 3.5rem; }
+.person { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 0 1.8rem; align-items: start; }
+.person__photo { width: 180px; margin-bottom: 0; }
+.person__text p:last-of-type { margin-bottom: 0.9rem; }
+@media (max-width: 1000px) { .team__grid { grid-template-columns: 1fr; gap: 2.6rem; } }
+@media (max-width: 520px) { .person { grid-template-columns: 112px minmax(0, 1fr); gap: 0 1.1rem; } .person__photo { width: 112px; } }
