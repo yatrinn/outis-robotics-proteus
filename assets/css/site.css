@@ -721,3 +721,9 @@ p { margin: 0 0 1rem; }
 .person__text p:last-of-type { margin-bottom: 0.9rem; }
 @media (max-width: 1000px) { .team__grid { grid-template-columns: 1fr; gap: 2.6rem; } }
 @media (max-width: 520px) { .person { grid-template-columns: 112px minmax(0, 1fr); gap: 0 1.1rem; } .person__photo { width: 112px; } }
+
+/* Comparison: Proteus column in green, clearly highlighted */
+.matrix .is-us { background: rgba(43, 182, 115, 0.10); box-shadow: inset 1px 0 0 rgba(43, 182, 115, 0.45), inset -1px 0 0 rgba(43, 182, 115, 0.45); }
+.matrix thead .is-us { color: var(--ok-glow); font-weight: 700; }
+.matrix td.is-us { color: var(--ink); font-weight: 650; }
+.is-us .cap--yes::before { background: var(--ok); border-color: var(--ok); }
