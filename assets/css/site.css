@@ -722,11 +722,19 @@ p { margin: 0 0 1rem; }
 @media (max-width: 1000px) { .team__grid { grid-template-columns: 1fr; gap: 2.6rem; } }
 @media (max-width: 520px) { .person { grid-template-columns: 112px minmax(0, 1fr); gap: 0 1.1rem; } .person__photo { width: 112px; } }
 
-/* Comparison: Proteus column in green, clearly highlighted */
-.matrix .is-us { background: rgba(43, 182, 115, 0.10); box-shadow: inset 1px 0 0 rgba(43, 182, 115, 0.45), inset -1px 0 0 rgba(43, 182, 115, 0.45); }
-.matrix thead .is-us { color: var(--ok-glow); font-weight: 700; }
-.matrix td.is-us { color: var(--ink); font-weight: 650; }
-.is-us .cap--yes::before { background: var(--ok); border-color: var(--ok); }
+/* Comparison: plain editorial table, no dots; Proteus stands out by weight and contrast */
+.matrix-scroll { border: 0; border-radius: 0; background: transparent; border-top: 1px solid var(--line-2); }
+.matrix thead th { font-family: var(--font-body); font-size: 0.92rem; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--ink-3); padding-top: 1.2rem; }
+.matrix tbody th { font-weight: 600; color: var(--ink-2); }
+.matrix th, .matrix td { padding-left: 0; padding-right: 1.2rem; }
+.cap { gap: 0; }
+.cap::before { display: none; }
+.cap--yes { color: var(--ink-2); }
+.cap--part { color: var(--ink-3); }
+.cap--no, .cap--none { color: #5f5c55; }
+.matrix .is-us { background: transparent; box-shadow: none; }
+.matrix thead .is-us { color: var(--ink); font-weight: 700; }
+.matrix td.is-us, .matrix td.is-us .cap { color: var(--ink); font-weight: 700; }
 
 /* Portraits sit above the film grain so they keep their true colors */
 .person__photo { position: relative; z-index: 45; }
