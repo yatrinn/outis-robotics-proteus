@@ -130,7 +130,7 @@ p { margin: 0 0 1rem; }
   .nav__links a { padding: 0.95rem 0; border-bottom: 1px solid var(--line); font-size: 1.15rem; color: var(--ink); }
   .nav__toggle { display: inline-block; }
   .nav__cta { margin-left: auto; }
-  .brand__by { display: none; }
+  .brand__by { display: inline; font-size: 0.62rem; }
 }
 
 /* hero */
@@ -749,3 +749,8 @@ p { margin: 0 0 1rem; }
   .hero__shade { background: linear-gradient(180deg, rgba(7,7,8,0.55) 0%, rgba(7,7,8,0.35) 18%, rgba(7,7,8,0.62) 38%, rgba(7,7,8,0.86) 62%, var(--bg) 100%); }
   .hero__lead { color: #ece9e2; }
 }
+
+/* Hero: founder thesis under the product line */
+.hero__thesis { margin: 1.1rem 0 0; font-family: var(--font-display); font-weight: 650; font-stretch: 85%; font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem); color: var(--accent); letter-spacing: 0.005em; }
+/* concrete example under the claim */
+.matrix__example { color: var(--ink-2); max-width: 62ch; margin: 1rem 0 0; font-size: 1.05rem; line-height: 1.6; }
