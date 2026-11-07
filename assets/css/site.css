@@ -754,3 +754,7 @@ p { margin: 0 0 1rem; }
 .hero__thesis { margin: 1.1rem 0 0; font-family: var(--font-display); font-weight: 650; font-stretch: 85%; font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem); color: var(--accent); letter-spacing: 0.005em; }
 /* concrete example under the claim */
 .matrix__example { color: var(--ink-2); max-width: 62ch; margin: 1rem 0 0; font-size: 1.05rem; line-height: 1.6; }
+
+/* Hero copy sits higher in the frame now that the logo strip is gone */
+.hero__content { padding-bottom: clamp(2.2rem, 14vh, 10rem); }
+@media (max-width: 760px) { .hero__content { padding-bottom: clamp(1.6rem, 9vh, 5rem); } }
