@@ -756,5 +756,5 @@ p { margin: 0 0 1rem; }
 .matrix__example { color: var(--ink-2); max-width: 62ch; margin: 1rem 0 0; font-size: 1.05rem; line-height: 1.6; }
 
 /* Hero copy sits higher in the frame now that the logo strip is gone */
-.hero__content { padding-bottom: clamp(2.2rem, 14vh, 10rem); }
-@media (max-width: 760px) { .hero__content { padding-bottom: clamp(1.6rem, 9vh, 5rem); } }
+.hero__content { padding-bottom: clamp(2.2rem, 7vh, 5rem); }
+@media (max-width: 760px) { .hero__content { padding-bottom: clamp(1.6rem, 4vh, 3rem); } }
