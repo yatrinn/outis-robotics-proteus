@@ -925,3 +925,9 @@ body { font-stretch: 100%; }
   text-transform: none; letter-spacing: 0.005em; font-size: 0.8rem; }
 .contact__meta p.meta-label { font-size: 0.8rem; }
 .phase__tag::before { content: ""; flex: none; width: 8px; height: 8px; background: currentColor; clip-path: var(--oct); }
+
+/* every control uses the site face (browsers give buttons and fields the system font by default) */
+button, input, select, textarea { font-family: inherit; }
+.nw { white-space: nowrap; }
+.icon-ext { display: inline-block; width: 0.62em; height: 0.62em; margin-left: 0.15em; vertical-align: 0.05em; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.film-dialog__close svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
