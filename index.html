@@ -24,8 +24,8 @@
 <link rel="shortcut icon" href="assets/img/favicon.ico">
 <link rel="preload" href="assets/fonts/mona-sans-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/media/v9-hero-1600.jpg" as="image" fetchpriority="high">
-<link rel="stylesheet" href="assets/css/site.css?v=38">
-<link rel="stylesheet" href="assets/css/vision.css?v=9">
+<link rel="stylesheet" href="assets/css/site.css?v=39">
+<link rel="stylesheet" href="assets/css/vision.css?v=10">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -107,16 +107,86 @@
 </section>
 
 <!-- PROBLEM -->
-<section class="stakes" id="problem" aria-labelledby="stakes-title">
+<section class="stakes paper" id="problem" aria-labelledby="stakes-title">
   <div class="wrap section-head section-head--split" data-reveal>
     <p class="section-rule"><span>The problem</span></p>
     <div>
-      <h2 id="stakes-title" class="h2">Someone still has to go in first.</h2>
+      <h2 id="stakes-title" class="h2">Robot brains are becoming general&#8209;purpose.<br>Their bodies are not.</h2>
     </div>
-    <p class="lead">Inspection and rescue often mean entering unstable structures, crossing rubble or reaching into confined spaces. Each step asks something different of a robot’s body.</p>
+    <p class="lead">Every robot is built around one fixed form, humanoids included. That form decides where it can go, what it can reach and how hard it can push. Real jobs need several bodies, so where no robot fits, a person still goes in first.</p>
   </div>
-  <div class="wrap stakes__line" data-reveal>
-    <p class="stakes__punch">Send a robot. <em>Lose a module, not a person.</em></p>
+</section>
+
+<!-- SHIFT -->
+<section class="mission" id="shift" aria-labelledby="shift-title">
+  <span id="mission" aria-hidden="true"></span>
+  <div class="wrap section-head shift-head">
+    <p class="section-rule"><span>How it works</span></p>
+    <div class="shift-head__text">
+      <h2 id="shift-title" class="h2 h2--key">Proteus makes the body a choice.</h2>
+      <p class="lead">Identical modules dock into whatever body the job needs and change shape when the task or terrain changes.</p>
+    </div>
+    <figure class="morph" data-morph aria-labelledby="morph-caption">
+      <svg class="morph__svg" viewBox="0 0 680 262" role="img" aria-label="Six identical modules redrawn as a walker, a chain or a braced arm">
+        <defs>
+          <pattern id="morph-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="9" class="morph__hatchline"/></pattern>
+        </defs>
+        <rect class="morph__hatch" x="0" y="231" width="680" height="31" fill="url(#morph-hatch)"/>
+        <path class="morph__ground" d="M0 231H680"/>
+        <g class="morph__env is-on" data-env="0">
+          <path class="morph__rubble" d="M112 231l9-11 15 2 7 9Z M290 231l12-17 21 4 9 13Z M344 231l6-7 10 2 3 5Z M506 231l14-18 22 6 7 12Z M590 231l8-9 12 3 3 6Z"/>
+        </g>
+        <g class="morph__env" data-env="1">
+          <rect class="morph__mass" x="250" y="168" width="430" height="22"/>
+          <rect class="morph__hatch" x="250" y="168" width="430" height="22" fill="url(#morph-hatch)"/>
+          <path class="morph__edge" d="M680 168H250V190H680"/>
+        </g>
+        <g class="morph__env" data-env="2">
+          <rect class="morph__mass" x="110" y="0" width="381" height="18"/>
+          <rect class="morph__hatch" x="110" y="0" width="381" height="18" fill="url(#morph-hatch)"/>
+          <rect class="morph__mass" x="461" y="18" width="30" height="213"/>
+          <rect class="morph__hatch" x="461" y="18" width="30" height="213" fill="url(#morph-hatch)"/>
+          <path class="morph__edge" d="M110 18H461V231 M491 0V231"/>
+          <path class="morph__crack" d="M461 58l10 12-6 9 11 13-7 10 9 13"/>
+          <rect class="morph__sensor" x="443" y="122" width="18" height="19" rx="2"/>
+        </g>
+        <g class="morph__struts" data-struts></g>
+        <g class="morph__heads" data-heads></g>
+      </svg>
+      <figcaption>
+        <div class="morph__tabs" role="group" aria-label="Choose a body">
+          <button class="morph__tab" type="button" data-shape="0" aria-pressed="true">Walker</button>
+          <button class="morph__tab" type="button" data-shape="1" aria-pressed="false">Chain</button>
+          <button class="morph__tab" type="button" data-shape="2" aria-pressed="false">Braced arm</button>
+        </div>
+        <p class="morph__caption" id="morph-caption" aria-live="polite">Walks over rubble and steps with a sensor on board.</p>
+      </figcaption>
+    </figure>
+  </div>
+
+      <div class="wrap phases">
+    <article class="phase" data-reveal>
+      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-02-rubble.jpg" data-src="assets/media/v8-02-rubble.mp4" aria-label="Simulation: the walker carries the sensor over rubble."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
+      <p class="phase__tag mono">Walker</p>
+      <h3 class="phase__title">Walks where wheels stop.</h3>
+      <p>Crosses rubble, steps and gaps with the sensor or tool on board. Nobody has to cross first.</p>
+    </article>
+    <article class="phase" data-reveal>
+      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-04-gap.jpg" data-src="assets/media/v8-04-gap.mp4" aria-label="Simulation: a chain of modules lowers the sensor through a narrow gap into the cellar."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
+      <p class="phase__tag mono">Chain</p>
+      <h3 class="phase__title">Fits through narrow openings.</h3>
+      <p>Turns into a chain and reaches through hatches, wall openings and gaps in collapsed slabs.</p>
+    </article>
+    <article class="phase" data-reveal>
+      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-05-column.jpg" data-src="assets/media/v8-05-column.mp4" aria-label="Simulation: the chain braces into a triangle and presses the sensor onto a cracked column."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
+      <p class="phase__tag mono">Braced arm</p>
+      <h3 class="phase__title">Works with force, on site.</h3>
+      <p>Braces against the structure and presses tools and sensors on with a force a snake or a drone cannot apply.</p>
+    </article>
+  </div>
+
+  <div class="wrap shift__matrix" data-reveal>
+    <p class="matrix__claim">Each of today’s robots covers one part of the job. Proteus covers all of it, with one kit.</p>
   </div>
 </section>
 
@@ -174,93 +244,19 @@
   </div>
 </section>
 
-<!-- SHIFT -->
-<section class="mission" id="shift" aria-labelledby="shift-title">
-  <span id="mission" aria-hidden="true"></span>
-  <div class="wrap section-head shift-head">
-    <p class="section-rule"><span>How it works</span></p>
-    <div class="shift-head__text">
-      <h2 id="shift-title" class="h2 h2--key">Today’s robots are stuck with the body they were built with.</h2>
-      <p class="lead">When the task or terrain changes, they fail. Proteus modules dock into whatever body the job needs: a walker over rubble, a chain through narrow openings, a braced arm that works with force on site.</p>
-    </div>
-    <figure class="morph" data-morph aria-labelledby="morph-caption">
-      <svg class="morph__svg" viewBox="0 0 680 262" role="img" aria-label="Six identical modules redrawn as a walker, a chain or a braced arm">
-        <defs>
-          <pattern id="morph-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="1.4" height="9" class="morph__hatchline"/></pattern>
-        </defs>
-        <rect class="morph__hatch" x="0" y="231" width="680" height="31" fill="url(#morph-hatch)"/>
-        <path class="morph__ground" d="M0 231H680"/>
-        <g class="morph__env is-on" data-env="0">
-          <path class="morph__rubble" d="M112 231l9-11 15 2 7 9Z M290 231l12-17 21 4 9 13Z M344 231l6-7 10 2 3 5Z M506 231l14-18 22 6 7 12Z M590 231l8-9 12 3 3 6Z"/>
-        </g>
-        <g class="morph__env" data-env="1">
-          <rect class="morph__mass" x="250" y="168" width="430" height="22"/>
-          <rect class="morph__hatch" x="250" y="168" width="430" height="22" fill="url(#morph-hatch)"/>
-          <path class="morph__edge" d="M680 168H250V190H680"/>
-        </g>
-        <g class="morph__env" data-env="2">
-          <rect class="morph__mass" x="110" y="0" width="381" height="18"/>
-          <rect class="morph__hatch" x="110" y="0" width="381" height="18" fill="url(#morph-hatch)"/>
-          <rect class="morph__mass" x="461" y="18" width="30" height="213"/>
-          <rect class="morph__hatch" x="461" y="18" width="30" height="213" fill="url(#morph-hatch)"/>
-          <path class="morph__edge" d="M110 18H461V231 M491 0V231"/>
-          <path class="morph__crack" d="M461 58l10 12-6 9 11 13-7 10 9 13"/>
-          <rect class="morph__sensor" x="443" y="122" width="18" height="19" rx="2"/>
-        </g>
-        <g class="morph__struts" data-struts></g>
-        <g class="morph__heads" data-heads></g>
-      </svg>
-      <figcaption>
-        <div class="morph__tabs" role="group" aria-label="Choose a body">
-          <button class="morph__tab" type="button" data-shape="0" aria-pressed="true">Walker</button>
-          <button class="morph__tab" type="button" data-shape="1" aria-pressed="false">Chain</button>
-          <button class="morph__tab" type="button" data-shape="2" aria-pressed="false">Braced arm</button>
-        </div>
-        <p class="morph__caption" id="morph-caption" aria-live="polite">Walks over rubble and steps with a sensor on board.</p>
-      </figcaption>
-    </figure>
-  </div>
-
-      <div class="wrap phases">
-    <article class="phase" data-reveal>
-      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-02-rubble.jpg" data-src="assets/media/v8-02-rubble.mp4" aria-label="Simulation: the walker carries the sensor over rubble."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>1</span>Walker</p>
-      <h3 class="phase__title">Walks where wheels stop.</h3>
-      <p>Crosses rubble, steps and gaps with the sensor or tool on board. Nobody has to cross first.</p>
-    </article>
-    <article class="phase" data-reveal>
-      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-04-gap.jpg" data-src="assets/media/v8-04-gap.mp4" aria-label="Simulation: a chain of modules lowers the sensor through a narrow gap into the cellar."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>2</span>Chain</p>
-      <h3 class="phase__title">Fits through narrow openings.</h3>
-      <p>Turns into a chain and reaches through manways, nozzles, hatches and gaps in collapsed slabs.</p>
-    </article>
-    <article class="phase" data-reveal>
-      <div class="phase__media"><video muted loop playsinline preload="none" poster="assets/media/v8-05-column.jpg" data-src="assets/media/v8-05-column.mp4" aria-label="Simulation: the chain braces into a triangle and presses the sensor onto a cracked column."></video><button class="media-toggle" type="button" aria-label="Play or pause"><span aria-hidden="true"></span></button></div>
-      <p class="phase__tag mono"><span>3</span>Braced arm</p>
-      <h3 class="phase__title">Works with force, on site.</h3>
-      <p>Braces against the structure and presses tools and sensors on with a force a snake or a drone cannot apply.</p>
-    </article>
-  </div>
-
-  <div class="wrap shift__matrix" data-reveal>
-    <p class="matrix__claim">Each of today’s robots covers one part of the job. Proteus covers all of it, with one kit.</p>
-    <p class="matrix__example">For example: cross rubble as a walker, slip through a gap as a chain, then brace and hold a sensor against a cracked column. Today that job means a person going in.</p>
-  </div>
-</section>
-
 <!-- FIRST JOB -->
-<section class="paper firstjob" id="first-job" aria-labelledby="fj-title">
+<section class="firstjob" id="first-job" aria-labelledby="fj-title">
   <span id="market" aria-hidden="true"></span>
   <div class="wrap section-head section-head--split" data-reveal>
     <p class="section-rule"><span>What it does</span></p>
     <div>
-      <h2 id="fj-title" class="h2">Goes where people shouldn’t have to.</h2>
+      <h2 id="fj-title" class="h2">Send a robot. Lose a module, not a person.</h2>
     </div>
-    <p class="lead">Proteus inspects, retrieves and works with force where access is hard and entry is dangerous.</p>
+    <p class="lead">Proteus goes in first. It looks, reaches and works with force where access is hard and entry is dangerous.</p>
   </div>
   <div class="wrap theaters__grid">
     <article class="theater" data-reveal>
-      <h3 class="h3">Inspect</h3>
+      <h3 class="h3">Look inside</h3>
       <p>Brings cameras and sensors into hard-to-reach spaces, so conditions are known before anyone enters.</p>
     </article>
     <article class="theater" data-reveal>
@@ -276,7 +272,7 @@
 </section>
 
 <!-- VISION -->
-<section class="vision vision-teaser" id="vision" aria-labelledby="vision-title">
+<section class="vision vision-teaser paper" id="vision" aria-labelledby="vision-title">
   <span id="progress" aria-hidden="true"></span>
   <div class="wrap vision-teaser__layout">
     <p class="section-rule"><span>Our vision</span></p>
@@ -284,16 +280,14 @@
       <h2 id="vision-title" class="h2 vision-teaser__title">Proteus redefines embodied AI.</h2>
     </div>
     <div class="vision-teaser__copy" data-reveal>
-      <p class="vision-thesis__p">Computers became universal when one machine could run any program. Robots have not had that moment yet. Each one is still built around a single body, and that body decides where it can go, what it can reach and how hard it can push. Robot brains get better every month. The body has become the bottleneck.</p>
-      <p class="vision-thesis__p">Proteus makes the body a choice. A pool of identical modules becomes the machine a task needs, splits into a team when there are several tasks and merges back when the job needs strength. One part, made by the million, does the work of a fleet of specialized machines: a broken module is swapped, not the machine, and capacity grows the way compute does.</p>
-      <p class="vision-thesis__p">Modular robots have spent decades in labs, built to prove that reconfiguration works. Ours is built for paid work from the first module on, with load-bearing docks and our own swarm intelligence that decides which body to become and moves the modules as one. Each generation gets smaller and opens new work.</p>
-      <a class="link vision-teaser__link" href="vision/">Read the full vision <span aria-hidden="true">↗</span></a>
+      <p class="vision-thesis__p">Computers became universal when one machine could run any program. Robots have not had that moment yet. We think it starts with the body: a pool of identical modules that becomes the machine a task needs, splits into a team when there are several tasks and merges again when the job needs strength. Our own swarm intelligence decides which body to become and moves the modules as one. Each generation gets smaller and opens new work.</p>
+      <a class="link vision-teaser__link" href="vision/">Read the full vision</a>
     </div>
   </div>
 </section>
 
 <!-- TEAM -->
-<section class="team paper" id="team" aria-labelledby="team-title">
+<section class="team" id="team" aria-labelledby="team-title">
   <div class="wrap section-head" data-reveal>
     <p class="section-rule"><span>Team</span></p>
     <h2 id="team-title" class="h2">Built from the shop floor up.</h2>
@@ -313,7 +307,7 @@
       <div class="person__text">
         <h3 class="person__name">Yannik Trinn</h3>
         <p class="person__role mono">Co-founder &amp; CEO</p>
-        <p>Five years in industrial maintenance at Viega, where he became a master craftsman in metal and electrical engineering. Physical AI at NEURA Robotics, strategy at Roland Berger, venture capital at HTGF. M.Sc. degrees from RWTH Aachen and Tsinghua.</p>
+        <p>Five years on the shop floor at Viega, where he became a master craftsman in metal and electrical engineering. Physical AI at NEURA Robotics, strategy at Roland Berger, venture capital at HTGF. M.Sc. degrees from RWTH Aachen and Tsinghua.</p>
         <a class="link mono" href="https://www.linkedin.com/in/yannik-trinn/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </article>
@@ -321,11 +315,11 @@
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact" aria-labelledby="contact-title">
+<section class="contact paper" id="contact" aria-labelledby="contact-title">
   <div class="wrap contact__grid" data-reveal>
     <p class="section-rule"><span>Contact</span></p>
     <div>
-      <h2 id="contact-title" class="h2 contact__heading">Let’s talk.</h2>
+      <h2 id="contact-title" class="h2 contact__heading">Bring us a job no robot fits.</h2>
       <div class="hero__actions">
         <a class="btn btn--accent" href="mailto:yannik.trinn@outis-robotics.com?subject=Demo%20request%20%E2%80%93%20Proteus">Book a demo</a>
         <a class="btn btn--ghost" href="mailto:yannik.trinn@outis-robotics.com?subject=Proteus">Contact us</a>

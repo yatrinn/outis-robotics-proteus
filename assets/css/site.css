@@ -908,3 +908,20 @@ body { font-stretch: 100%; }
 .contact__meta p.meta-label { font-size: 0.72rem; }
 .h2, .display, .stakes__punch { color: color-mix(in srgb, var(--ink) 94%, transparent); }
 @media (max-width: 980px) { .nav__links a { font-size: 0.95rem; } }
+
+/* Story order (Nov 2026): problem, how it works, module, what it does, vision, team, contact.
+   Tones alternate light and dark so each part reads as its own block. */
+.stakes.paper, .vision.paper { background: var(--bg); }
+.firstjob { background: var(--bg-2); padding-bottom: var(--section); border-top: 1px solid var(--line); }
+.contact.paper { background: var(--bg); padding-bottom: 0; }
+.paper .btn--accent { background: var(--ink); color: var(--bg); }
+.paper .btn--accent:hover { background: #2a2d33; }
+.paper .btn--ghost { background: transparent; border-color: var(--line-2); color: var(--ink); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.paper .btn--ghost:hover { border-color: var(--ink); }
+.contact__heading { max-width: 16ch; }
+
+/* labels in sentence case; only the navigation keeps small capitals */
+.section-rule, .mono, .eyebrow, .phase__tag, .person__role, .logos__label, .meta-label, .morph__tab {
+  text-transform: none; letter-spacing: 0.005em; font-size: 0.8rem; }
+.contact__meta p.meta-label { font-size: 0.8rem; }
+.phase__tag::before { content: ""; flex: none; width: 8px; height: 8px; background: currentColor; clip-path: var(--oct); }
