@@ -15,6 +15,18 @@
   src: url("../fonts/archivo-latin-ext-wdth-normal.woff2") format("woff2-variations");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+@font-face {
+  font-family: "Hubot Sans Variable";
+  font-style: normal; font-display: swap; font-weight: 200 900; font-stretch: 75% 125%;
+  src: url("../fonts/hubot-sans-latin-wdth-normal.woff2") format("woff2-variations"), url("../fonts/hubot-sans-latin-wdth-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Hubot Sans Variable";
+  font-style: normal; font-display: swap; font-weight: 200 900; font-stretch: 75% 125%;
+  src: url("../fonts/hubot-sans-latin-ext-wdth-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 @font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2"); }
 
@@ -878,3 +890,25 @@ p { margin: 0 0 1rem; }
 :root { --fs-h2: clamp(2.5rem, 1.5rem + 3.6vw, 4.8rem); }
 .nav.is-scrolled, .nav.is-open { background: rgba(7, 7, 8, 0.95); }
 .nav__links a[aria-current="page"]::before { opacity: 1; transform: none; }
+
+/* Hubot Sans (SIL OFL) carries headlines and labels: narrow and heavy for statements, wide for labels.
+   Archivo stays the reading face. */
+:root { --font-head: "Hubot Sans Variable", "Archivo Variable", "Helvetica Neue", Arial, sans-serif; }
+.display, .h2, .h3, .phase__title, .person__name, .stakes__punch, .matrix__claim, .brand__word, .film__label strong, .contact__title, .page h1 {
+  font-family: var(--font-head); }
+.display { font-weight: 850; font-stretch: 75%; letter-spacing: -0.01em; }
+.h2 { font-weight: 820; font-stretch: 75%; letter-spacing: -0.012em; line-height: 0.96; }
+.stakes__punch { font-weight: 820; font-stretch: 75%; }
+.h3, .phase__title { font-weight: 760; font-stretch: 85%; }
+.person__name { font-weight: 760; font-stretch: 90%; }
+.matrix__claim { font-weight: 720; font-stretch: 90%; }
+.brand__word { font-weight: 800; font-stretch: 100%; letter-spacing: 0.04em; }
+.mono, .eyebrow, .phase__tag, .person__role, .logos__label, .brand__by, .meta-label, .section-rule, .morph__tab, .btn {
+  font-family: var(--font-head); }
+.mono, .eyebrow, .phase__tag, .person__role, .logos__label, .meta-label, .section-rule, .morph__tab { font-stretch: 115%; font-weight: 620; letter-spacing: 0.015em; }
+.btn { font-stretch: 100%; font-weight: 640; letter-spacing: 0.005em; }
+.specs li::before, .phase__tag span { font-family: var(--font-head); font-stretch: 100%; font-weight: 750; }
+.display { letter-spacing: -0.004em; }
+.h2 { letter-spacing: -0.006em; }
+.brand__by { white-space: nowrap; }
+@media (max-width: 980px) { .nav__inner { gap: 0.7rem; } .nav__toggle { margin-left: 0; flex-shrink: 0; } .nav__cta { flex-shrink: 0; } .brand__word { font-stretch: 90%; } }

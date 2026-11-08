@@ -62,3 +62,15 @@
 .essay__header h1 { font-weight: 800; font-stretch: 68%; line-height: 0.96; letter-spacing: -0.01em; }
 .essay__body h2 { font-weight: 780; font-stretch: 72%; line-height: 1.05; letter-spacing: -0.005em; }
 .essay__byline { font-size: 0.8rem; }
+.essay__header h1, .essay__body h2 { font-family: var(--font-head); }
+.essay__header h1 { font-weight: 840; font-stretch: 75%; }
+.essay__body h2 { font-weight: 780; font-stretch: 82%; }
+@media (max-width:380px) {
+  .nav__inner { gap:.4rem; }
+  .brand { gap:.35rem; }
+  .brand__mark { width:26px; height:30px; }
+  .brand__word { font-size:1rem; letter-spacing:.02em; }
+  .brand__by { font-size:.6rem; }
+  .nav__cta { padding-inline:.65rem; font-size:.8rem; }
+}
+@media (max-width:340px) { .brand__by { display:none; } }
