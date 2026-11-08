@@ -58,3 +58,7 @@
 .essay__plan strong { display:block; color:var(--ink); font-weight:650; line-height:1.45; margin-bottom:.2rem; }
 .essay__plan .essay__status { display:block; margin-top:.35rem; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
 .vision-thesis__p { color: var(--ink-2); font-size: clamp(1.02rem, 0.95rem + 0.3vw, 1.18rem); line-height: 1.62; max-width: 60ch; margin: 0 0 1.1rem; }
+/* identity pass: condensed headline, extended labels */
+.essay__header h1 { font-weight: 800; font-stretch: 68%; line-height: 0.96; letter-spacing: -0.01em; }
+.essay__body h2 { font-weight: 780; font-stretch: 72%; line-height: 1.05; letter-spacing: -0.005em; }
+.essay__byline { font-size: 0.8rem; }

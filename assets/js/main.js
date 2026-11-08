@@ -179,3 +179,123 @@
     else if (resume && seen) { resume = false; play(); }
   });
 })();
+
+// shape-shifter: six identical modules redrawn as a walker, a chain or a braced arm.
+// Each module moves as a rigid strut (centre, angle, length), so a change of body reads as modules re-docking.
+(() => {
+  const fig = document.querySelector('[data-morph]');
+  if (!fig) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const NS = 'http://www.w3.org/2000/svg';
+  const gS = fig.querySelector('[data-struts]');
+  const gH = fig.querySelector('[data-heads]');
+  const tabs = Array.from(fig.querySelectorAll('[data-shape]'));
+  const envs = Array.from(fig.querySelectorAll('[data-env]'));
+  const cap = fig.querySelector('.morph__caption');
+  const captions = [
+    'Walks over rubble and steps with a sensor on board.',
+    'Turns into a chain and slips under a low slab.',
+    'Braces between floor and ceiling and presses a sensor onto a cracked wall.'
+  ];
+  // [x1, y1, x2, y2] per module; module i keeps its identity across shapes
+  const shapes = [
+    [[230,124,196,218],[230,124,264,218],[230,124,330,124],[330,124,430,124],[430,124,396,218],[430,124,487,206]],
+    [[40,218,140,218],[140,218,240,218],[240,218,340,218],[340,218,440,218],[440,218,540,218],[540,218,640,218]],
+    [[180,218,230,131.4],[180,218,280,218],[230,131.4,230,31.4],[280,218,230,131.4],[230,131.4,330,131.4],[330,131.4,430,131.4]]
+  ];
+  const pose = m => ({ cx: (m[0] + m[2]) / 2, cy: (m[1] + m[3]) / 2, a: Math.atan2(m[3] - m[1], m[2] - m[0]), l: Math.hypot(m[2] - m[0], m[3] - m[1]) });
+  const poses = shapes.map(s => s.map(pose));
+  const el = (n, attrs) => { const e = document.createElementNS(NS, n); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; };
+  const oct = r => { let d = ''; for (let k = 0; k < 8; k++) { const t = Math.PI / 8 + k * Math.PI / 4; d += (k ? 'L' : 'M') + (r * Math.cos(t)).toFixed(2) + ' ' + (r * Math.sin(t)).toFixed(2); } return d + 'Z'; };
+  const struts = [], heads = [];
+  for (let i = 0; i < 6; i++) {
+    const o = el('line', { class: 'morph__strut' }), h = el('line', { class: 'morph__strut-hi' });
+    gS.append(o, h); struts.push([o, h]);
+    for (let k = 0; k < 2; k++) {
+      const g = el('g', { class: 'morph__head' });
+      g.append(el('path', { d: oct(13.5) }), el('path', { class: 'morph__face', d: oct(6) }));
+      gH.append(g); heads.push(g);
+    }
+  }
+  const f = n => n.toFixed(1);
+  const draw = P => P.forEach((p, i) => {
+    const dx = Math.cos(p.a) * p.l / 2, dy = Math.sin(p.a) * p.l / 2;
+    const x1 = p.cx - dx, y1 = p.cy - dy, x2 = p.cx + dx, y2 = p.cy + dy;
+    struts[i].forEach(l => { l.setAttribute('x1', f(x1)); l.setAttribute('y1', f(y1)); l.setAttribute('x2', f(x2)); l.setAttribute('y2', f(y2)); });
+    const deg = f(p.a * 180 / Math.PI);
+    heads[2 * i].setAttribute('transform', `translate(${f(x1)} ${f(y1)}) rotate(${deg})`);
+    heads[2 * i + 1].setAttribute('transform', `translate(${f(x2)} ${f(y2)}) rotate(${deg})`);
+  });
+  // struts are symmetric, so the shortest turn is taken modulo 180 degrees
+  const turn = (a, b) => { let d = (b - a) % Math.PI; if (d > Math.PI / 2) d -= Math.PI; if (d < -Math.PI / 2) d += Math.PI; return d; };
+  const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  let cur = poses[0].map(p => ({ ...p })), target = 0, raf = 0;
+  draw(cur);
+  const animateTo = P => {
+    cancelAnimationFrame(raf);
+    if (reduce) { cur = P.map(p => ({ ...p })); draw(cur); return; }
+    const from = cur.map(p => ({ ...p }));
+    const plan = from.map((p, i) => {
+      const q = P[i], dist = Math.hypot(q.cx - p.cx, q.cy - p.cy);
+      return { da: turn(p.a, q.a), lift: Math.min(34, 8 + dist * 0.16), delay: i * 0.05 };
+    });
+    const dur = 1150, t0 = performance.now();
+    const step = now => {
+      const T = Math.min(1, (now - t0) / dur);
+      cur = from.map((p, i) => {
+        const q = P[i], k = plan[i];
+        const t = ease(Math.min(1, Math.max(0, (T - k.delay) / (1 - 0.25))));
+        return { cx: p.cx + (q.cx - p.cx) * t, cy: p.cy + (q.cy - p.cy) * t - Math.sin(Math.PI * t) * k.lift, a: p.a + k.da * t, l: p.l + (q.l - p.l) * t };
+      });
+      draw(cur);
+      if (T < 1) raf = requestAnimationFrame(step);
+      else { cur = P.map(p => ({ ...p })); draw(cur); }
+    };
+    raf = requestAnimationFrame(step);
+  };
+  const CYCLE = 4600;
+  fig.style.setProperty('--cycle', CYCLE + 'ms');
+  let auto = !reduce, visible = false, timer = 0;
+  const select = (k, byUser) => {
+    if (byUser) stop();
+    if (k === target) return;
+    target = k;
+    tabs.forEach((b, i) => b.setAttribute('aria-pressed', String(i === k)));
+    envs.forEach(e => e.classList.toggle('is-on', Number(e.dataset.env) === k));
+    if (cap) { cap.setAttribute('aria-live', byUser ? 'polite' : 'off'); cap.textContent = captions[k]; }
+    animateTo(poses[k]);
+  };
+  const run = () => {
+    clearTimeout(timer);
+    const on = auto && visible && !document.hidden;
+    fig.classList.toggle('is-cycling', on);
+    if (on) timer = setTimeout(() => { select((target + 1) % 3, false); run(); }, CYCLE);
+  };
+  function stop() { auto = false; clearTimeout(timer); fig.classList.remove('is-cycling'); }
+  tabs.forEach((b, i) => b.addEventListener('click', () => select(i, true)));
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => entries.forEach(e => {
+      const was = visible; visible = e.intersectionRatio >= 0.35;
+      if (visible !== was) run();
+    }), { threshold: [0, 0.35, 1] }).observe(fig);
+  }
+  document.addEventListener('visibilitychange', run);
+})();
+
+// nav: mark the section in view
+(() => {
+  const links = Array.from(document.querySelectorAll('.nav__links a[href^="#"]'));
+  const pairs = links.map(a => [a, document.getElementById(a.getAttribute('href').slice(1))]).filter(p => p[1]);
+  if (!pairs.length) return;
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const line = window.innerHeight * 0.4;
+    let active = null;
+    pairs.forEach(([a, s]) => { const r = s.getBoundingClientRect(); if (r.top <= line && r.bottom > line) active = a; });
+    pairs.forEach(([a]) => a.classList.toggle('is-active', a === active));
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
