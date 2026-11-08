@@ -74,3 +74,6 @@
   .nav__cta { padding-inline:.65rem; font-size:.8rem; }
 }
 @media (max-width:340px) { .brand__by { display:none; } }
+.essay__header h1, .essay__body h2 { font-family: var(--font-ui); font-stretch: normal; }
+.essay__header h1 { font-weight: 400; letter-spacing: -0.035em; line-height: 1.02; }
+.essay__body h2 { font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; }
