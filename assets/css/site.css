@@ -627,18 +627,18 @@ p { margin: 0 0 1rem; }
 .logos__track img:hover { opacity: 1; }
 .logos__viewport:hover .logos__track { animation-play-state: paused; }
 @keyframes logos-run { to { transform: translateX(-100%); } }
-.logos__programs { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: center; border-top: 1px solid var(--line); padding-top: 1.3rem; }
-.logos__programs .logos__label { white-space: nowrap; }
-.logos__programs-list { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 3rem; }
-.logos__programs img { display: block; height: var(--h); width: auto; opacity: 0.88; }
+/* startup programs: own light block under the hero, logos in original colours */
+.programs { background: #fff; color: #15161a; border-bottom: 1px solid rgba(21, 22, 26, 0.1); }
+.programs__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem 3.2rem; padding-block: 1.6rem; }
+.programs__label { margin: 0; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: #6f6b63; }
+.programs__list { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem 3.2rem; margin: 0; padding: 0; list-style: none; }
+.programs__list img { display: block; height: 36px; width: auto; }
+@media (max-width: 760px) { .programs__inner { gap: 0.9rem 2rem; padding-block: 1.3rem; } .programs__list { gap: 1rem 2rem; } .programs__list img { height: 30px; } }
 @media (max-width: 760px) {
   .logos__inner { grid-template-columns: minmax(0, 1fr) auto; padding-block: 1.2rem calc(1.2rem + env(safe-area-inset-bottom, 0px)); }
   .logos__viewport { grid-column: 1 / -1; grid-row: 2; }
   .logos__track { gap: 3rem; padding-right: 3rem; animation-duration: 40s; }
   .logos__track img { height: calc(var(--h) * 0.8); }
-  .logos__programs { grid-row: 3; padding-top: 1rem; column-gap: 1rem; }
-  .logos__programs-list { gap: 0.8rem 1.4rem; }
-  .logos__programs img { height: calc(var(--h) * 0.75); }
 }
 @media (prefers-reduced-motion: reduce) {
   .logos__track { animation: none; flex-wrap: wrap; flex-shrink: 1; justify-content: center; row-gap: 1.6rem; padding-right: 0; }
