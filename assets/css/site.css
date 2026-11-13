@@ -716,7 +716,6 @@ p { margin: 0 0 1rem; }
 .foot__programs-label { color: var(--ink-3); margin-right: 0.2rem; }
 .foot__badge { display: inline-flex; align-items: center; height: 34px; padding: 0 0.75rem; border-radius: 6px; background: #fff; }
 .foot__badge img { display: block; height: 18px; width: auto; }
-.foot__badge--text { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.02em; color: #1d1d1f; white-space: nowrap; }
 .hero__programs { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 1.6rem; }
 .hero__programs-label { color: #dcd8cf; margin-right: 0.3rem; font-size: 0.8rem; }
 
