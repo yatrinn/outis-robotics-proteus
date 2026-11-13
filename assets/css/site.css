@@ -627,11 +627,16 @@ p { margin: 0 0 1rem; }
 .logos__track img:hover { opacity: 1; }
 .logos__viewport:hover .logos__track { animation-play-state: paused; }
 @keyframes logos-run { to { transform: translateX(-100%); } }
+.logos__programs { display: flex; align-items: center; gap: 1.8rem; padding-left: 2.6rem; border-left: 1px solid var(--line); }
+.logos__programs .logos__label { margin-right: 0.2rem; white-space: nowrap; }
+.logos__programs img { display: block; height: var(--h); width: auto; opacity: 0.88; }
 @media (max-width: 760px) {
   .logos__inner { grid-template-columns: minmax(0, 1fr) auto; padding-block: 1.2rem calc(1.2rem + env(safe-area-inset-bottom, 0px)); }
   .logos__viewport { grid-column: 1 / -1; grid-row: 2; }
   .logos__track { gap: 3rem; padding-right: 3rem; animation-duration: 40s; }
   .logos__track img { height: calc(var(--h) * 0.8); }
+  .logos__programs { grid-column: 1 / -1; grid-row: 3; padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 1rem; gap: 1.2rem; flex-wrap: wrap; }
+  .logos__programs img { height: calc(var(--h) * 0.75); }
 }
 @media (prefers-reduced-motion: reduce) {
   .logos__track { animation: none; flex-wrap: wrap; flex-shrink: 1; justify-content: center; row-gap: 1.6rem; padding-right: 0; }
@@ -716,8 +721,6 @@ p { margin: 0 0 1rem; }
 .foot__programs-label { color: var(--ink-3); margin-right: 0.2rem; }
 .foot__badge { display: inline-flex; align-items: center; height: 34px; padding: 0 0.75rem; border-radius: 6px; background: #fff; }
 .foot__badge img { display: block; height: 18px; width: auto; }
-.hero__programs { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 1.6rem; }
-.hero__programs-label { color: #dcd8cf; margin-right: 0.3rem; font-size: 0.8rem; }
 
 /* Team: photo left, text right, two people across the full width */
 .team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem 3.5rem; }
