@@ -627,6 +627,12 @@ p { margin: 0 0 1rem; }
 .logos__track img:hover { opacity: 1; }
 .logos__viewport:hover .logos__track { animation-play-state: paused; }
 @keyframes logos-run { to { transform: translateX(-100%); } }
+/* five strongest logos: static and all visible on wide screens, marquee below that */
+@media (min-width: 1200px) {
+  .logos__viewport { -webkit-mask-image: none; mask-image: none; }
+  .logos__track { animation: none; flex: 1 1 auto; flex-shrink: 1; justify-content: space-between; gap: 2rem; padding: 0.4rem 0; }
+  .logos__track[aria-hidden="true"] { display: none; }
+}
 /* startup programs: own light block under the hero, logos in original colours */
 .programs { background: #fff; color: #15161a; border-bottom: 1px solid rgba(21, 22, 26, 0.1); }
 .programs__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem 3.2rem; padding-block: 1.6rem; }
