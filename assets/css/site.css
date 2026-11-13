@@ -712,6 +712,8 @@ p { margin: 0 0 1rem; }
 .foot__meta { margin: 0; color: var(--ink-2); line-height: 1.6; }
 .foot__links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; }
 .foot__links span { color: var(--ink-3); }
+.foot__programs { margin: 0; color: var(--ink-3); }
+.foot__programs span { white-space: nowrap; }
 
 /* Team: photo left, text right, two people across the full width */
 .team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem 3.5rem; }
