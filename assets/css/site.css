@@ -640,7 +640,9 @@ p { margin: 0 0 1rem; }
 .programs__label { margin: 0; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: #6f6b63; }
 .programs__list { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem 3.2rem; margin: 0; padding: 0; list-style: none; }
 .programs__list img { display: block; height: 36px; width: auto; }
+.programs__list img.programs__logo--tall { height: 50px; }
 @media (max-width: 760px) { .programs__inner { gap: 0.9rem 2rem; padding-block: 1.3rem; } .programs__list { gap: 1rem 2rem; } .programs__list img { height: 30px; } }
+@media (max-width: 760px) { .programs__list img.programs__logo--tall { height: 42px; } }
 @media (max-width: 760px) {
   .logos__inner { grid-template-columns: minmax(0, 1fr) auto; padding-block: 1.2rem calc(1.2rem + env(safe-area-inset-bottom, 0px)); }
   .logos__viewport { grid-column: 1 / -1; grid-row: 2; }
@@ -730,6 +732,7 @@ p { margin: 0 0 1rem; }
 .foot__programs-label { color: var(--ink-3); margin-right: 0.2rem; }
 .foot__badge { display: inline-flex; align-items: center; height: 34px; padding: 0 0.75rem; border-radius: 6px; background: #fff; }
 .foot__badge img { display: block; height: 18px; width: auto; }
+.foot__badge img.foot__badge-img--tall { height: 26px; }
 
 /* Team: photo left, text right, two people across the full width */
 .team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem 3.5rem; }
